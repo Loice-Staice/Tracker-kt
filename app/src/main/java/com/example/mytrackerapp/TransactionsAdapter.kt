@@ -17,10 +17,10 @@ class TransactionsAdapter(private val transactionList: List<Transaction>) :
 
     override fun onBindViewHolder(holder: TransactionViewHolder, position: Int) {
         val transaction = transactionList[position]
-        holder.tvMoneyIn.text = transaction.moneyIn.toString()
-        holder.tvMoneyOut.text = transaction.moneyOut.toString()
-        holder.tvBalance.text = transaction.balance.toString()
-        holder.tvTransaction.text = transaction.transaction
+        holder.tvSalary.text = transaction.text
+        holder.tvSalaryTransaction.text= transaction.salary
+        holder.tvDate.text = transaction.date
+
     }
 
     override fun getItemCount(): Int {
@@ -29,10 +29,9 @@ class TransactionsAdapter(private val transactionList: List<Transaction>) :
 }
 
 class TransactionViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-    val tvMoneyIn: TextView = itemView.findViewById(R.id.tvMoneyIn)
-    val tvMoneyOut: TextView = itemView.findViewById(R.id.tvMoneyOut)
-    val tvBalance: TextView = itemView.findViewById(R.id.tvBalance)
-    val tvTransaction: TextView = itemView.findViewById(R.id.tvTransactions)
+    val tvSalary = itemView.findViewById<TextView>(R.id.tvSalary)
+    val tvSalaryTransaction= itemView.findViewById<TextView>(R.id.tvSalaryTransaction)
+    val tvDate = itemView.findViewById<TextView>(R.id.tvDate)
 }
 
 
